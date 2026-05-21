@@ -1,1 +1,666 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Du lịch Lâm Đồng | Đà Lạt - Bảo Lộc - Đắk Nông - Phan Thiết</title>
+  <meta name="description" content="Khám phá du lịch Lâm Đồng mở rộng: Đà Lạt, Bảo Lộc, Đức Trọng, Di Linh, Lâm Hà, Đạ Tẻh, Bảo Lâm, Đắk Nông, Phan Thiết, Bình Thuận cũ." />
+  <style>
+    :root {
+      --green: #1f7a4d;
+      --dark-green: #105236;
+      --light-green: #e9f7ef;
+      --yellow: #ffd166;
+      --orange: #f97316;
+      --blue: #0ea5e9;
+      --sand: #fff4df;
+      --dark: #1f2937;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --shadow: 0 12px 30px rgba(0,0,0,0.12);
+      --radius: 22px;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: #f7faf8;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--dark-green);
+      font-size: 20px;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--yellow));
+      display: grid;
+      place-items: center;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .menu a {
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .menu a:hover {
+      background: var(--light-green);
+      color: var(--dark-green);
+    }
+
+    .hero {
+      min-height: 74vh;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(120deg, rgba(16,82,54,0.9), rgba(31,122,77,0.65)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80') center/cover;
+      color: white;
+      padding: 90px 20px;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.05;
+      margin: 18px 0;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 720px;
+      color: #f3f4f6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary { background: var(--yellow); color: #1f2937; }
+    .btn-outline { border-color: rgba(255,255,255,0.7); color: white; }
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card h3 { margin-top: 0; }
+    .quick-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .quick-list li {
+      background: rgba(255,255,255,0.15);
+      padding: 12px;
+      border-radius: 14px;
+    }
+
+    section {
+      padding: 72px 20px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-title span {
+      color: var(--green);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      margin: 8px 0 12px;
+      color: #123524;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: -54px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: var(--green);
+    }
+
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border: 1px solid #eef2f7;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-img {
+      height: 190px;
+      background: linear-gradient(135deg, #1f7a4d, #0ea5e9);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 48px;
+    }
+
+    .card-body { padding: 22px; }
+    .card h3 { margin: 0 0 10px; color: #123524; font-size: 23px; }
+    .card p { color: var(--muted); margin: 0 0 14px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      background: var(--light-green);
+      color: var(--dark-green);
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--sand), #eefdf3);
+    }
+
+    .places {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .place {
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid #edf2f7;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .place .icon { font-size: 30px; }
+    .place h4 { margin: 10px 0 6px; color: #123524; }
+    .place p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .route {
+      background: #123524;
+      color: white;
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .route h3 { margin-top: 0; }
+    .route ol { padding-left: 20px; }
+    .route li { margin: 8px 0; }
+
+    .tips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .tip-box {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      border-left: 6px solid var(--green);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+    }
+
+    .cta {
+      background:
+        linear-gradient(120deg, rgba(16,82,54,0.95), rgba(14,165,233,0.72)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 { color: white; }
+    .cta p { max-width: 760px; margin: auto; color: #f3f4f6; }
+
+    footer {
+      background: #0b2b1d;
+      color: #e5e7eb;
+      padding: 34px 20px;
+      text-align: center;
+    }
+
+    footer strong { color: var(--yellow); }
+
+    @media (max-width: 980px) {
+      .hero-inner, .tips { grid-template-columns: 1fr; }
+      .stats, .places { grid-template-columns: repeat(2, 1fr); }
+      .region-grid, .route-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .menu { justify-content: flex-start; }
+      .stats, .places, .region-grid, .route-grid { grid-template-columns: 1fr; }
+      .hero { padding: 70px 18px; }
+      section { padding: 56px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a href="#home" class="brand">
+        <span class="logo">🏔️</span>
+        <span>Du lịch Lâm Đồng</span>
+      </a>
+      <div class="menu">
+        <a href="#diemden">Điểm đến</a>
+        <a href="#noibat">Nổi bật</a>
+        <a href="#lichtrinh">Lịch trình</a>
+        <a href="#kinhnghiem">Kinh nghiệm</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="badge">🌿 Cao nguyên - Rừng - Biển - Thác</span>
+          <h1>Khám phá Lâm Đồng mở rộng</h1>
+          <p>
+            Một hành trình từ Đà Lạt mộng mơ, Bảo Lộc xanh mát, Đức Trọng - Di Linh - Lâm Hà yên bình,
+            đến Đắk Nông hùng vĩ và Phan Thiết đầy nắng gió. Đây là vùng đất hội tụ núi rừng, thác nước,
+            hồ, đồi chè, văn hóa bản địa và biển xanh.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#diemden">Khám phá ngay</a>
+            <a class="btn btn-outline" href="#lichtrinh">Xem gợi ý lịch trình</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Gợi ý trải nghiệm nhanh</h3>
+          <ul class="quick-list">
+            <li>🌄 Săn mây Đà Lạt - Cầu Đất - Lâm Hà</li>
+            <li>💦 Khám phá thác Pongour, Dambri, Liêng Nung</li>
+            <li>🌊 Nghỉ biển Phan Thiết - Mũi Né - Bàu Trắng</li>
+            <li>☕ Thưởng thức cà phê, trà, trái cây cao nguyên</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>3</strong><span>vùng cảnh quan</span></div>
+        <div class="stat"><strong>10+</strong><span>khu vực nổi bật</span></div>
+        <div class="stat"><strong>50+</strong><span>điểm có thể khám phá</span></div>
+        <div class="stat"><strong>4 mùa</strong><span>đều có trải nghiệm</span></div>
+      </div>
+    </div>
+
+    <section id="diemden">
+      <div class="container">
+        <div class="section-title">
+          <span>Bản đồ cảm hứng</span>
+          <h2>Các khu vực du lịch nên khám phá</h2>
+          <p>Danh sách các điểm đến nổi bật theo từng vùng: cao nguyên Lâm Đồng cũ, Đắk Nông và Bình Thuận cũ.</p>
+        </div>
+
+        <div class="region-grid">
+          <article class="card">
+            <div class="card-img">🌸</div>
+            <div class="card-body">
+              <h3>Đà Lạt</h3>
+              <p>Thành phố ngàn hoa với khí hậu mát mẻ, hồ, rừng thông, kiến trúc cổ và nhiều điểm check-in.</p>
+              <div class="tags">
+                <span class="tag">Hồ Xuân Hương</span><span class="tag">Langbiang</span><span class="tag">Cầu Đất</span><span class="tag">Thung lũng Tình Yêu</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🍵</div>
+            <div class="card-body">
+              <h3>Bảo Lộc</h3>
+              <p>Vùng đất trà, cà phê, thác nước và khí hậu trong lành, thích hợp nghỉ dưỡng nhẹ nhàng.</p>
+              <div class="tags">
+                <span class="tag">Thác Dambri</span><span class="tag">Đồi chè Tâm Châu</span><span class="tag">Chùa Linh Quy Pháp Ấn</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">💦</div>
+            <div class="card-body">
+              <h3>Đức Trọng</h3>
+              <p>Cửa ngõ sân bay Liên Khương, nổi tiếng với thác Pongour, hồ Đại Ninh và cảnh quan nông nghiệp.</p>
+              <div class="tags">
+                <span class="tag">Thác Pongour</span><span class="tag">Thác Prenn</span><span class="tag">Hồ Đại Ninh</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🌲</div>
+            <div class="card-body">
+              <h3>Di Linh</h3>
+              <p>Cung đường cao nguyên xanh, nhiều đồi cà phê, hồ, thác và các điểm ngắm cảnh yên bình.</p>
+              <div class="tags">
+                <span class="tag">Đèo Gia Bắc</span><span class="tag">Thác Bobla</span><span class="tag">Cà phê Di Linh</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">☁️</div>
+            <div class="card-body">
+              <h3>Nam Ban - Lâm Hà</h3>
+              <p>Vùng ven Đà Lạt có làng hoa, cà phê, thác Voi và nhiều cung đường săn mây đẹp.</p>
+              <div class="tags">
+                <span class="tag">Thác Voi</span><span class="tag">Chùa Linh Ẩn</span><span class="tag">Mê Linh Coffee</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🌳</div>
+            <div class="card-body">
+              <h3>Đạ Tẻh</h3>
+              <p>Thiên nhiên hoang sơ, hồ, rừng và không gian sinh thái phù hợp cho người thích khám phá yên tĩnh.</p>
+              <div class="tags">
+                <span class="tag">Hồ Đạ Tẻh</span><span class="tag">Rừng tự nhiên</span><span class="tag">Du lịch sinh thái</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">☕</div>
+            <div class="card-body">
+              <h3>Bảo Lâm</h3>
+              <p>Vùng cao nguyên rộng lớn với đồi chè, cà phê, suối, thác và những cung đường xanh mát.</p>
+              <div class="tags">
+                <span class="tag">Đồi chè</span><span class="tag">Cà phê</span><span class="tag">Suối - thác</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🌋</div>
+            <div class="card-body">
+              <h3>Đắk Nông</h3>
+              <p>Nổi bật với Công viên địa chất, thác nước, hồ Tà Đùng và dấu tích núi lửa độc đáo.</p>
+              <div class="tags">
+                <span class="tag">Tà Đùng</span><span class="tag">Hang động núi lửa</span><span class="tag">Thác Liêng Nung</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🌊</div>
+            <div class="card-body">
+              <h3>Phan Thiết - Bình Thuận cũ</h3>
+              <p>Thiên đường biển, đồi cát, làng chài, hải sản và các cung đường ven biển đầy nắng.</p>
+              <div class="tags">
+                <span class="tag">Mũi Né</span><span class="tag">Bàu Trắng</span><span class="tag">Hải đăng Kê Gà</span><span class="tag">Cù Lao Câu</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="noibat" class="highlight">
+      <div class="container">
+        <div class="section-title">
+          <span>Điểm nổi tiếng & tự nhiên</span>
+          <h2>Những nơi nên đưa vào website</h2>
+          <p>Có thể dùng danh sách này làm nội dung chính cho từng bài viết hoặc từng trang chi tiết sau này.</p>
+        </div>
+
+        <div class="places">
+          <div class="place"><div class="icon">🏞️</div><h4>Hồ Xuân Hương</h4><p>Biểu tượng trung tâm Đà Lạt, đẹp để đi dạo, đạp xe, ngắm hoàng hôn.</p></div>
+          <div class="place"><div class="icon">⛰️</div><h4>Langbiang</h4><p>Nơi ngắm toàn cảnh cao nguyên, phù hợp trekking và chụp ảnh.</p></div>
+          <div class="place"><div class="icon">🌱</div><h4>Đồi chè Cầu Đất</h4><p>Không gian xanh rộng, nổi tiếng với săn mây và bình minh.</p></div>
+          <div class="place"><div class="icon">💦</div><h4>Thác Pongour</h4><p>Một trong những thác đẹp nhất khu vực, thuộc Đức Trọng.</p></div>
+
+          <div class="place"><div class="icon">🌊</div><h4>Thác Dambri</h4><p>Điểm đến nổi tiếng ở Bảo Lộc, có rừng và cảnh quan thác hùng vĩ.</p></div>
+          <div class="place"><div class="icon">🙏</div><h4>Linh Quy Pháp Ấn</h4><p>Không gian thanh tịnh, cổng trời, mây núi và cảnh quan Bảo Lộc.</p></div>
+          <div class="place"><div class="icon">☕</div><h4>Mê Linh Coffee</h4><p>Quán cà phê view đẹp tại Lâm Hà, nhìn ra thung lũng và vườn cà phê.</p></div>
+          <div class="place"><div class="icon">🐘</div><h4>Thác Voi</h4><p>Điểm tự nhiên nổi bật gần Nam Ban, kết hợp tham quan chùa Linh Ẩn.</p></div>
+
+          <div class="place"><div class="icon">🌋</div><h4>Hang động núi lửa</h4><p>Dấu ấn địa chất độc đáo tại Đắk Nông, phù hợp du lịch khám phá.</p></div>
+          <div class="place"><div class="icon">🏝️</div><h4>Hồ Tà Đùng</h4><p>Được ví như vịnh Hạ Long trên cao nguyên với nhiều đảo nhỏ giữa hồ.</p></div>
+          <div class="place"><div class="icon">🏖️</div><h4>Mũi Né</h4><p>Biển xanh, resort, thể thao biển và đồi cát nổi tiếng của Phan Thiết.</p></div>
+          <div class="place"><div class="icon">🏜️</div><h4>Bàu Trắng</h4><p>Đồi cát trắng, hồ nước giữa cát và cung đường ven biển rất đẹp.</p></div>
+
+          <div class="place"><div class="icon">🚤</div><h4>Cù Lao Câu</h4><p>Đảo nhỏ hoang sơ, nước trong, thích hợp đi biển và chụp ảnh.</p></div>
+          <div class="place"><div class="icon">🏮</div><h4>Làng chài Mũi Né</h4><p>Nơi ngắm thuyền thúng, bình minh và thưởng thức hải sản.</p></div>
+          <div class="place"><div class="icon">🗼</div><h4>Hải đăng Kê Gà</h4><p>Điểm ngắm biển, chụp ảnh và khám phá kiến trúc ven biển.</p></div>
+          <div class="place"><div class="icon">🌅</div><h4>Đồi cát bay</h4><p>Địa điểm đặc trưng của Mũi Né, đẹp nhất vào sáng sớm hoặc chiều muộn.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lichtrinh">
+      <div class="container">
+        <div class="section-title">
+          <span>Gợi ý hành trình</span>
+          <h2>3 tuyến du lịch dễ triển khai</h2>
+          <p>Phù hợp để bạn viết thành các bài “lịch trình 2 ngày 1 đêm”, “3 ngày 2 đêm”, “5 ngày 4 đêm”.</p>
+        </div>
+
+        <div class="route-grid">
+          <div class="route">
+            <h3>🌸 Tuyến cao nguyên mộng mơ</h3>
+            <ol>
+              <li>Đà Lạt trung tâm</li>
+              <li>Langbiang - Thung lũng Tình Yêu</li>
+              <li>Cầu Đất săn mây</li>
+              <li>Đức Trọng - thác Pongour</li>
+            </ol>
+          </div>
+          <div class="route">
+            <h3>🍵 Tuyến trà - cà phê - thác</h3>
+            <ol>
+              <li>Bảo Lộc - đồi chè</li>
+              <li>Thác Dambri</li>
+              <li>Linh Quy Pháp Ấn</li>
+              <li>Di Linh - Bảo Lâm</li>
+            </ol>
+          </div>
+          <div class="route">
+            <h3>🌊 Tuyến rừng biển mở rộng</h3>
+            <ol>
+              <li>Đắk Nông - Tà Đùng</li>
+              <li>Hang động núi lửa</li>
+              <li>Phan Thiết - Mũi Né</li>
+              <li>Bàu Trắng - Kê Gà</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kinhnghiem" class="highlight">
+      <div class="container">
+        <div class="section-title">
+          <span>Kinh nghiệm</span>
+          <h2>Mẹo đi Lâm Đồng mở rộng</h2>
+          <p>Một vài lưu ý ngắn để khách dễ lên kế hoạch, đặc biệt khi kết hợp cao nguyên và biển.</p>
+        </div>
+
+        <div class="tips">
+          <div class="tip-box">
+            <h3>Thời điểm nên đi</h3>
+            <p>Đà Lạt, Bảo Lộc, Di Linh đẹp quanh năm nhưng sáng sớm và chiều tối thường lạnh. Phan Thiết - Mũi Né hợp đi biển vào mùa nắng, còn Đắk Nông đẹp khi thác và hồ có nhiều nước.</p>
+          </div>
+          <div class="tip-box">
+            <h3>Di chuyển</h3>
+            <p>Nếu đi nhiều vùng, nên chia tuyến theo cụm: Đà Lạt - Đức Trọng - Lâm Hà; Bảo Lộc - Di Linh - Bảo Lâm; Đắk Nông - Tà Đùng; Phan Thiết - Mũi Né - Kê Gà.</p>
+          </div>
+          <div class="tip-box">
+            <h3>Chuẩn bị</h3>
+            <p>Mang áo khoác, giày dễ đi bộ, kem chống nắng, nước uống và kiểm tra thời tiết trước khi đi thác, hồ, rừng hoặc cung đường ven biển.</p>
+          </div>
+          <div class="tip-box">
+            <h3>Du lịch có trách nhiệm</h3>
+            <p>Không xả rác, không bẻ hoa, không tự ý vào khu vực nguy hiểm, tôn trọng văn hóa địa phương và ưu tiên sử dụng dịch vụ của người dân bản địa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Bắt đầu hành trình khám phá Lâm Đồng</h2>
+        <p>
+          Từ cao nguyên se lạnh đến biển xanh nắng vàng, Lâm Đồng mở rộng là điểm đến đa dạng cho nghỉ dưỡng,
+          check-in, khám phá thiên nhiên, văn hóa và ẩm thực địa phương.
+        </p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="#diemden">Xem các điểm đến</a>
+          <a class="btn btn-outline" href="#home">Lên đầu trang</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>dulichlamdong.github.io</strong> - Trang giới thiệu du lịch Lâm Đồng mở rộng</p>
+    <p>Nội dung có thể bổ sung thêm ảnh thật, bản đồ Google Maps, bài viết chi tiết và thông tin liên hệ sau.</p>
+  </footer>
+</body>
+</html>
