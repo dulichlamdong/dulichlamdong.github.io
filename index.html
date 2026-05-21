@@ -98,7 +98,7 @@
       align-items: center;
       background:
         linear-gradient(120deg, rgba(16,82,54,0.9), rgba(31,122,77,0.65)),
-        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80') center/cover;
+        url('assets/images/pongour.jpg') center/cover;
       color: white;
       padding: 90px 20px;
     }
@@ -346,9 +346,85 @@
     .cta {
       background:
         linear-gradient(120deg, rgba(16,82,54,0.95), rgba(14,165,233,0.72)),
-        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover;
+        url('assets/images/bau-trang.jpg') center/cover;
       color: white;
       text-align: center;
+    }
+
+    .photo-section {
+      background: linear-gradient(180deg, #ffffff 0%, #f5fbf7 100%);
+    }
+
+    .tour-path {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tour-path li {
+      background: white;
+      border: 1px solid #e7efe9;
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      color: #274236;
+      font-weight: 700;
+    }
+
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tour-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #e8efe9;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      transition: 0.2s ease;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .tour-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #dbe7df;
+    }
+
+    .tour-card .tour-body {
+      padding: 18px;
+    }
+
+    .tour-card .tour-kicker {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--light-green);
+      color: var(--dark-green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .tour-card h3 {
+      margin: 12px 0 8px;
+      color: #123524;
+    }
+
+    .tour-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .cta h2 { color: white; }
@@ -367,12 +443,14 @@
       .hero-inner, .tips { grid-template-columns: 1fr; }
       .stats, .places { grid-template-columns: repeat(2, 1fr); }
       .region-grid, .route-grid { grid-template-columns: 1fr 1fr; }
+      .tour-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 640px) {
       .nav { align-items: flex-start; flex-direction: column; }
       .menu { justify-content: flex-start; }
       .stats, .places, .region-grid, .route-grid { grid-template-columns: 1fr; }
+      .tour-path, .tour-grid { grid-template-columns: 1fr; }
       .hero { padding: 70px 18px; }
       section { padding: 56px 18px; }
     }
@@ -387,6 +465,7 @@
       </a>
       <div class="menu">
         <a href="#diemden">Điểm đến</a>
+        <a href="#diadanh">Địa danh mới</a>
         <a href="#noibat">Nổi bật</a>
         <a href="#lichtrinh">Lịch trình</a>
         <a href="#kinhnghiem">Kinh nghiệm</a>
@@ -536,6 +615,144 @@
               <div class="tags">
                 <span class="tag">Mũi Né</span><span class="tag">Bàu Trắng</span><span class="tag">Hải đăng Kê Gà</span><span class="tag">Cù Lao Câu</span>
               </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diadanh" class="photo-section">
+      <div class="container">
+        <div class="section-title">
+          <span>Theo thứ tự địa danh</span>
+          <h2>Ảnh local cho nhiều điểm du lịch hơn</h2>
+          <p>Đã sắp xếp theo tuyến từ Đà Lạt xuống Đức Trọng, Bảo Lộc, Đắk Nông và Bình Thuận để dễ đọc và dễ triển khai thêm nội dung.</p>
+        </div>
+
+        <ol class="tour-path">
+          <li>01. Đà Lạt - Ga Đà Lạt, Chợ Đà Lạt, Hồ Xuân Hương</li>
+          <li>02. Đà Lạt - Quảng trường Lâm Viên, Langbiang, Datanla</li>
+          <li>03. Đức Trọng - Prenn, Pongour</li>
+          <li>04. Bảo Lộc - Dambri, Linh Quy Pháp Ấn</li>
+          <li>05. Đắk Nông - Tà Đùng, cảnh quan hồ núi lửa</li>
+          <li>06. Bình Thuận - Bàu Trắng, Mũi Né</li>
+        </ol>
+
+        <div class="tour-grid">
+          <article class="tour-card">
+            <img src="assets/images/da-lat-train-station.jpg" alt="Ga Đà Lạt">
+            <div class="tour-body">
+              <span class="tour-kicker">01 - Đà Lạt</span>
+              <h3>Ga Đà Lạt</h3>
+              <p>Biểu tượng kiến trúc cổ, thích hợp mở đầu hành trình khám phá phố núi.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/da-lat-market.jpg" alt="Chợ Đà Lạt">
+            <div class="tour-body">
+              <span class="tour-kicker">02 - Đà Lạt</span>
+              <h3>Chợ Đà Lạt</h3>
+              <p>Nơi gom đủ đặc sản, hoa quả và không khí nhộn nhịp của trung tâm thành phố.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/da-lat-market.jpg" alt="Quảng trường Lâm Viên">
+            <div class="tour-body">
+              <span class="tour-kicker">03 - Đà Lạt</span>
+              <h3>Quảng trường Lâm Viên</h3>
+              <p>Điểm check-in nổi bật với kiến trúc bông hoa và nụ atisô ngay hồ Xuân Hương.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/da-lat-train-station.jpg" alt="Kiến trúc atisô Đà Lạt">
+            <div class="tour-body">
+              <span class="tour-kicker">04 - Đà Lạt</span>
+              <h3>Hồ Xuân Hương & Atisô</h3>
+              <p>Không gian trung tâm phù hợp đi bộ, ngắm cảnh và chụp ảnh buổi chiều tối.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/pongour.jpg" alt="Thác Pongour">
+            <div class="tour-body">
+              <span class="tour-kicker">05 - Đức Trọng</span>
+              <h3>Thác Pongour</h3>
+              <p>Một trong những thác nước đẹp và hùng vĩ nhất khu vực Lâm Đồng mở rộng.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/datanla.jpg" alt="Thác Datanla">
+            <div class="tour-body">
+              <span class="tour-kicker">06 - Đà Lạt</span>
+              <h3>Thác Datanla</h3>
+              <p>Địa điểm phù hợp trải nghiệm máng trượt, đi bộ rừng và du lịch mạo hiểm nhẹ.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/pongour.jpg" alt="Thác Prenn">
+            <div class="tour-body">
+              <span class="tour-kicker">07 - Đà Lạt</span>
+              <h3>Thác Prenn</h3>
+              <p>Điểm dừng quen thuộc ở cửa ngõ Đà Lạt với hệ thống tham quan và cây xanh đẹp.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/da-lat-train-station.jpg" alt="Núi Langbiang">
+            <div class="tour-body">
+              <span class="tour-kicker">08 - Đà Lạt</span>
+              <h3>Núi Langbiang</h3>
+              <p>Điểm ngắm toàn cảnh cao nguyên, phù hợp trekking, săn mây và dã ngoại.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/da-lat-market.jpg" alt="Thác Dambri">
+            <div class="tour-body">
+              <span class="tour-kicker">09 - Bảo Lộc</span>
+              <h3>Thác Dambri</h3>
+              <p>Thác lớn nổi tiếng của Bảo Lộc, hợp đi cùng đồi chè và các điểm nghỉ dưỡng gần đó.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/da-lat-train-station.jpg" alt="Linh Quy Pháp Ấn">
+            <div class="tour-body">
+              <span class="tour-kicker">10 - Bảo Lộc</span>
+              <h3>Linh Quy Pháp Ấn</h3>
+              <p>Điểm ngắm mây và bình minh được nhiều người tìm đến khi lên Bảo Lộc.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/bau-trang.jpg" alt="Tà Đùng">
+            <div class="tour-body">
+              <span class="tour-kicker">11 - Đắk Nông</span>
+              <h3>Tà Đùng</h3>
+              <p>Vùng hồ và đảo nhỏ đẹp theo kiểu cao nguyên, thích hợp cắm trại và ngắm bình minh.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/bau-trang.jpg" alt="Bàu Trắng">
+            <div class="tour-body">
+              <span class="tour-kicker">12 - Bình Thuận</span>
+              <h3>Bàu Trắng</h3>
+              <p>Đồi cát trắng, hồ nước ngọt và khung cảnh rất hợp cho nội dung ảnh đẹp.</p>
+            </div>
+          </article>
+
+          <article class="tour-card">
+            <img src="assets/images/bau-trang.jpg" alt="Mũi Né">
+            <div class="tour-body">
+              <span class="tour-kicker">13 - Bình Thuận</span>
+              <h3>Mũi Né</h3>
+              <p>Biển, cát, resort và làng chài tạo thành một tuyến du lịch rất dễ viết thành bài riêng.</p>
             </div>
           </article>
         </div>
