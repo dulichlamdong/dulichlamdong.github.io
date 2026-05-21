@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đắk Nông | Du lịch Lâm Đồng mở rộng</title>
+  <meta name="description" content="Trang vùng Đắk Nông: Tà Đùng, Dray Nur, Dray Sáp, Liêng Nung, Chư Bluk và các điểm khám phá địa chất, thác nước, hồ núi lửa." />
+  <style>
+    :root { --green:#1f7a4d; --dark-green:#105236; --light-green:#e9f7ef; --yellow:#ffd166; --dark:#1f2937; --muted:#6b7280; --shadow:0 12px 30px rgba(0,0,0,0.12); --radius:22px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--dark); background:#f6faf7; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    .topbar { position:sticky; top:0; z-index:10; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); border-bottom:1px solid #e5e7eb; }
+    .nav { max-width:1180px; margin:auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:800; color:var(--dark-green); font-size:20px; }
+    .logo { width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg, var(--green), var(--yellow)); display:grid; place-items:center; color:white; box-shadow:var(--shadow); }
+    .menu { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:10px; font-size:14px; color:#374151; }
+    .menu a { padding:8px 12px; border-radius:999px; }
+    .menu a:hover { background:var(--light-green); color:var(--dark-green); }
+    .hero { min-height:72vh; display:grid; align-items:center; background:linear-gradient(120deg, rgba(17,45,62,0.92), rgba(31,122,77,0.58)), url('assets/images/daknong/ta-dung.jpg') center/cover; color:white; padding:88px 20px; }
+    .hero-inner { max-width:1180px; margin:auto; display:grid; grid-template-columns:1.15fr 0.85fr; gap:34px; align-items:center; }
+    .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.24); padding:8px 14px; border-radius:999px; font-weight:700; }
+    h1 { font-size:clamp(38px, 6vw, 68px); line-height:1.05; margin:18px 0; letter-spacing:-1.2px; }
+    .hero p { font-size:18px; max-width:720px; color:#f3f4f6; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 18px; border-radius:999px; font-weight:800; border:2px solid transparent; transition:0.2s ease; }
+    .btn-primary { background:var(--yellow); color:#1f2937; }
+    .btn-outline { border-color:rgba(255,255,255,0.72); color:white; }
+    .btn:hover { transform:translateY(-2px); }
+    .hero-card { background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.24); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); backdrop-filter:blur(10px); }
+    .hero-card h3 { margin-top:0; }
+    .quick-list { display:grid; gap:12px; padding:0; margin:0; list-style:none; }
+    .quick-list li { background:rgba(255,255,255,0.14); padding:12px; border-radius:14px; }
+    section { padding:72px 20px; }
+    .container { max-width:1180px; margin:auto; }
+    .section-title { text-align:center; margin-bottom:34px; }
+    .section-title span { color:var(--green); font-weight:800; text-transform:uppercase; font-size:13px; letter-spacing:1.2px; }
+    h2 { font-size:clamp(30px, 4vw, 46px); line-height:1.15; margin:8px 0 12px; color:#123524; }
+    .section-title p { max-width:760px; margin:auto; color:var(--muted); }
+    .spot-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+    .spot-card { background:white; border-radius:22px; overflow:hidden; border:1px solid #e7efe9; box-shadow:0 8px 22px rgba(0,0,0,0.06); }
+    .spot-card img { width:100%; height:190px; object-fit:cover; background:#e7efe9; }
+    .spot-card .body { padding:18px; }
+    .spot-card .zone { display:inline-flex; padding:5px 10px; border-radius:999px; background:#eefdf3; color:#105236; font-size:12px; font-weight:800; }
+    .spot-card h3 { margin:12px 0 8px; color:#123524; font-size:20px; }
+    .spot-card p { margin:0; color:var(--muted); font-size:14px; }
+    .tour-path { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; margin:0 0 28px; padding:0; list-style:none; }
+    .tour-path li { background:white; border:1px solid #e7efe9; border-radius:16px; padding:14px 16px; box-shadow:0 6px 18px rgba(0,0,0,0.05); color:#274236; font-weight:700; }
+    .tips { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    .tip-box { background:white; border-radius:var(--radius); padding:24px; border-left:6px solid var(--green); box-shadow:0 8px 22px rgba(0,0,0,0.07); }
+    .cta { background:linear-gradient(120deg, rgba(17,45,62,0.95), rgba(14,165,233,0.60)), url('assets/images/daknong/dray-nur.jpg') center/cover; color:white; text-align:center; }
+    .cta h2 { color:white; }
+    .cta p { max-width:760px; margin:auto; color:#f3f4f6; }
+    footer { background:#0b2b1d; color:#e5e7eb; padding:34px 20px; text-align:center; }
+    footer strong { color:var(--yellow); }
+    @media (max-width:980px) { .hero-inner, .tips { grid-template-columns:1fr; } .spot-grid { grid-template-columns:repeat(2, 1fr); } .tour-path { grid-template-columns:1fr; } }
+    @media (max-width:640px) { .nav { align-items:flex-start; flex-direction:column; } .menu { justify-content:flex-start; } .spot-grid, .tips { grid-template-columns:1fr; } .hero { padding:70px 18px; } section { padding:56px 18px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a href="index.html" class="brand"><span class="logo">🌋</span><span>Đắk Nông</span></a>
+      <div class="menu">
+        <a href="index.html#diemden">Trang chủ</a>
+        <a href="#diemnoibat">Điểm nổi bật</a>
+        <a href="#hanhtrinh">Hành trình</a>
+        <a href="#kinhnghiem">Kinh nghiệm</a>
+        <a href="baoloc.html">Bảo Lộc - Bảo Lâm</a>
+        <a href="binhthuan.html">Bình Thuận</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="badge">🌋 Hồ - thác - hang động núi lửa</span>
+          <h1>Khám phá Đắk Nông</h1>
+          <p>
+            Đắk Nông có Tà Đùng, các thác nước lớn và hệ thống hang động núi lửa độc đáo. Đây là trang vùng riêng
+            để tổ chức nội dung rõ ràng, phù hợp với du lịch khám phá, thiên nhiên và địa chất.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#diemnoibat">Xem điểm nổi bật</a>
+            <a class="btn btn-outline" href="index.html">Quay về trang chủ</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Trục nội dung</h3>
+          <ul class="quick-list">
+            <li>01. Tà Đùng - hồ và đảo nổi</li>
+            <li>02. Thác Dray Nur - Dray Sáp</li>
+            <li>03. Liêng Nung - cảnh quan thác</li>
+            <li>04. Chư Bluk - hang động núi lửa</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="diemnoibat">
+      <div class="container">
+        <div class="section-title">
+          <span>Điểm nổi bật</span>
+          <h2>Những địa danh nên ưu tiên đưa vào nội dung</h2>
+          <p>Nhóm này giúp trang Đắk Nông vừa có điểm nhấn cảnh quan, vừa có chiều sâu về địa chất và trải nghiệm thiên nhiên.</p>
+        </div>
+
+        <div class="spot-grid">
+          <article class="spot-card"><img src="assets/images/daknong/ta-dung.jpg" alt="Tà Đùng" /><div class="body"><span class="zone">Gia Nghĩa - Đắk Nông</span><h3>Tà Đùng</h3><p>Biểu tượng du lịch của Đắk Nông với hồ, đảo nhỏ và cảnh quan rất dễ chụp ảnh.</p></div></article>
+          <article class="spot-card"><img src="assets/images/daknong/dray-nur.jpg" alt="Thác Dray Nur" /><div class="body"><span class="zone">Đắk Nông</span><h3>Thác Dray Nur</h3><p>Một trong những thác lớn đẹp nhất vùng, phù hợp làm điểm đầu cho bài khám phá.</p></div></article>
+          <article class="spot-card"><img src="assets/images/daknong/dray-sap.jpg" alt="Thác Dray Sáp" /><div class="body"><span class="zone">Đắk Nông</span><h3>Thác Dray Sáp</h3><p>Điểm nổi bật thuộc hệ thác nước lớn của khu vực, tạo tuyến tham quan liên hoàn.</p></div></article>
+          <article class="spot-card"><img src="assets/images/daknong/lieng-nung.jpg" alt="Thác Liêng Nung" /><div class="body"><span class="zone">Gia Nghĩa</span><h3>Thác Liêng Nung</h3><p>Không gian thác gắn với cảnh quan cao nguyên và rất phù hợp nội dung sinh thái.</p></div></article>
+          <article class="spot-card"><img src="assets/images/daknong/chu-bluk.jpg" alt="Hang động núi lửa Chư Bluk" /><div class="body"><span class="zone">Krông Nô</span><h3>Hang động núi lửa Chư Bluk</h3><p>Điểm nhấn địa chất đặc trưng, giúp trang có bản sắc khác biệt so với các vùng khác.</p></div></article>
+          <article class="spot-card"><img src="assets/images/daknong/ea-sno.jpg" alt="Hồ Ea Sno" /><div class="body"><span class="zone">Đắk Nông</span><h3>Hồ Ea Sno</h3><p>Không gian yên tĩnh, thích hợp cho cắm trại, dã ngoại và ngắm bình minh.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="hanhtrinh">
+      <div class="container">
+        <div class="section-title">
+          <span>Hành trình</span>
+          <h2>Gợi ý tuyến ngắn tại Đắk Nông</h2>
+          <p>Đây là một khung lịch trình đơn giản để bạn viết thành bài 2 ngày 1 đêm hoặc 3 ngày 2 đêm.</p>
+        </div>
+        <ol class="tour-path">
+          <li>01. Gia Nghĩa - Tà Đùng - Hồ Ea Sno</li>
+          <li>02. Thác Dray Nur - Thác Dray Sáp</li>
+          <li>03. Krông Nô - Hang động núi lửa Chư Bluk</li>
+          <li>04. Kết hợp thêm Liêng Nung để hoàn thiện tuyến thiên nhiên</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="kinhnghiem" style="background:#eef9f1;">
+      <div class="container">
+        <div class="section-title">
+          <span>Kinh nghiệm</span>
+          <h2>Lưu ý khi đi Đắk Nông</h2>
+          <p>Nội dung ngắn gọn để người xem dễ theo dõi trước khi lên đường.</p>
+        </div>
+        <div class="tips">
+          <div class="tip-box">
+            <h3>Thời điểm phù hợp</h3>
+            <p>Mùa khô thuận lợi cho di chuyển và chụp cảnh hồ, còn mùa mưa thì thác thường mạnh nước hơn nhưng cần cẩn thận đường trơn.</p>
+          </div>
+          <div class="tip-box">
+            <h3>Di chuyển</h3>
+            <p>Nên gom các điểm cùng hướng như Gia Nghĩa - Tà Đùng hoặc Krông Nô - hang động núi lửa để tiết kiệm thời gian và sức lực.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Trang vùng Đắk Nông</h2>
+        <p>Phần này có thể mở rộng thành các trang chi tiết cho Tà Đùng, Chư Bluk, Dray Nur và Liêng Nung sau khi bạn thay ảnh thật.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="index.html">Về trang chủ</a>
+          <a class="btn btn-outline" href="binhthuan.html">Sang Bình Thuận</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="max-width:1100px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;text-align:left;">
+      <div>
+        <h3 style="margin-top:0;color:#ffd166;">Du lịch Lâm Đồng</h3>
+        <p>Trang vùng Đắk Nông được xây để tách nội dung theo cụm rõ ràng và thuận tiện cho việc thay ảnh, bổ sung bài viết sau này.</p>
+      </div>
+      <div>
+        <h3 style="color:#ffd166;">Liên kết</h3>
+        <p><a href="index.html">Trang chủ</a></p>
+        <p><a href="baoloc.html">Bảo Lộc - Bảo Lâm</a></p>
+        <p><a href="binhthuan.html">Bình Thuận</a></p>
+      </div>
+      <div>
+        <h3 style="color:#ffd166;">Khu vực</h3>
+        <p>Tà Đùng</p>
+        <p>Gia Nghĩa</p>
+        <p>Krông Nô</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);margin-top:28px;padding-top:18px;text-align:center;color:#cbd5e1;">© 2026 Du lịch Lâm Đồng</div>
+  </footer>
+</body>
+</html>

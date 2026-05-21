@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Du lịch Lâm Đồng | Đà Lạt - Bảo Lộc - Đắk Nông - Phan Thiết</title>
-  <meta name="description" content="Khám phá du lịch Lâm Đồng mở rộng: Đà Lạt, Bảo Lộc, Đức Trọng, Di Linh, Lâm Hà, Đạ Tẻh, Bảo Lâm, Đắk Nông, Phan Thiết, Bình Thuận cũ." />
+  <meta name="description" content="Khám phá du lịch Lâm Đồng mở rộng theo từng vùng: Bảo Lộc, Bảo Lâm, Đà Lạt, Đức Trọng, Đắk Nông và Bình Thuận với nhiều điểm đến, lịch trình và gợi ý trải nghiệm." />
   <style>
     :root {
       --green: #1f7a4d;
@@ -427,6 +427,61 @@
       font-size: 14px;
     }
 
+    .spot-section {
+      background: white;
+    }
+
+    .spot-section.alt {
+      background: linear-gradient(180deg, #f8fbf8 0%, #ffffff 100%);
+    }
+
+    .spot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .spot-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #e7efe9;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    }
+
+    .spot-card img {
+      width: 100%;
+      height: 185px;
+      object-fit: cover;
+      background: #e7efe9;
+    }
+
+    .spot-card .body {
+      padding: 18px;
+    }
+
+    .spot-card .zone {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eefdf3;
+      color: #105236;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .spot-card h3 {
+      margin: 12px 0 8px;
+      color: #123524;
+      font-size: 20px;
+    }
+
+    .spot-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .cta h2 { color: white; }
     .cta p { max-width: 760px; margin: auto; color: #f3f4f6; }
 
@@ -444,6 +499,7 @@
       .stats, .places { grid-template-columns: repeat(2, 1fr); }
       .region-grid, .route-grid { grid-template-columns: 1fr 1fr; }
       .tour-grid { grid-template-columns: repeat(2, 1fr); }
+      .spot-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 640px) {
@@ -451,6 +507,7 @@
       .menu { justify-content: flex-start; }
       .stats, .places, .region-grid, .route-grid { grid-template-columns: 1fr; }
       .tour-path, .tour-grid { grid-template-columns: 1fr; }
+      .spot-grid { grid-template-columns: 1fr; }
       .hero { padding: 70px 18px; }
       section { padding: 56px 18px; }
     }
@@ -464,8 +521,11 @@
         <span>Du lịch Lâm Đồng</span>
       </a>
       <div class="menu">
-        <a href="#diemden">Điểm đến</a>
+        <a href="#diemden">Tổng quan</a>
         <a href="#diadanh">Địa danh mới</a>
+        <a href="#baoloc-baolam">Bảo Lộc - Bảo Lâm</a>
+        <a href="#daknong-binhthuan">Đắk Nông - Bình Thuận</a>
+        <a href="#trang-rieng">Trang riêng</a>
         <a href="#noibat">Nổi bật</a>
         <a href="#lichtrinh">Lịch trình</a>
         <a href="#kinhnghiem">Kinh nghiệm</a>
@@ -480,22 +540,23 @@
           <span class="badge">🌿 Cao nguyên - Rừng - Biển - Thác</span>
           <h1>Khám phá Lâm Đồng mở rộng</h1>
           <p>
-            Một hành trình từ Đà Lạt mộng mơ, Bảo Lộc xanh mát, Đức Trọng - Di Linh - Lâm Hà yên bình,
-            đến Đắk Nông hùng vĩ và Phan Thiết đầy nắng gió. Đây là vùng đất hội tụ núi rừng, thác nước,
-            hồ, đồi chè, văn hóa bản địa và biển xanh.
+            Một hành trình được chia theo từng vùng rõ ràng: Bảo Lộc - Bảo Lâm, Đà Lạt - Đức Trọng,
+            Đắk Nông và Bình Thuận. Nội dung tập trung vào các điểm đến nổi bật, dễ triển khai thành
+            bài viết, lịch trình hoặc trang giới thiệu chi tiết sau này.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#diemden">Khám phá ngay</a>
-            <a class="btn btn-outline" href="#lichtrinh">Xem gợi ý lịch trình</a>
+            <a class="btn btn-outline" href="#baoloc-baolam">Xem cụm Bảo Lộc - Bảo Lâm</a>
+            <a class="btn btn-outline" href="#trang-rieng">Xem trang vùng</a>
           </div>
         </div>
         <div class="hero-card">
-          <h3>Gợi ý trải nghiệm nhanh</h3>
+          <h3>Trục nội dung chính</h3>
           <ul class="quick-list">
-            <li>🌄 Săn mây Đà Lạt - Cầu Đất - Lâm Hà</li>
-            <li>💦 Khám phá thác Pongour, Dambri, Liêng Nung</li>
-            <li>🌊 Nghỉ biển Phan Thiết - Mũi Né - Bàu Trắng</li>
-            <li>☕ Thưởng thức cà phê, trà, trái cây cao nguyên</li>
+            <li>01. Bảo Lộc - Bảo Lâm: thác, suối, farmstay, đồi chè</li>
+            <li>02. Đà Lạt - Đức Trọng: trung tâm, hồ, núi và thác</li>
+            <li>03. Đắk Nông: Tà Đùng, thác, hang động núi lửa</li>
+            <li>04. Bình Thuận: biển, đồi cát, làng chài, di tích</li>
           </ul>
         </div>
       </div>
@@ -503,10 +564,10 @@
 
     <div class="container">
       <div class="stats">
-        <div class="stat"><strong>3</strong><span>vùng cảnh quan</span></div>
-        <div class="stat"><strong>10+</strong><span>khu vực nổi bật</span></div>
-        <div class="stat"><strong>50+</strong><span>điểm có thể khám phá</span></div>
-        <div class="stat"><strong>4 mùa</strong><span>đều có trải nghiệm</span></div>
+        <div class="stat"><strong>4</strong><span>trục vùng chính</span></div>
+        <div class="stat"><strong>20+</strong><span>địa danh tiêu biểu</span></div>
+        <div class="stat"><strong>4</strong><span>nhóm hành trình</span></div>
+        <div class="stat"><strong>1</strong><span>bố cục rõ ràng</span></div>
       </div>
     </div>
 
@@ -515,7 +576,7 @@
         <div class="section-title">
           <span>Bản đồ cảm hứng</span>
           <h2>Các khu vực du lịch nên khám phá</h2>
-          <p>Danh sách các điểm đến nổi bật theo từng vùng: cao nguyên Lâm Đồng cũ, Đắk Nông và Bình Thuận cũ.</p>
+          <p>Các điểm đến nền tảng được chọn theo mức độ nhận diện và khả năng kết hợp tuyến, phù hợp cho bài giới thiệu và điều hướng nội dung.</p>
         </div>
 
         <div class="region-grid">
@@ -626,7 +687,7 @@
         <div class="section-title">
           <span>Theo thứ tự địa danh</span>
           <h2>Ảnh local cho nhiều điểm du lịch hơn</h2>
-          <p>Đã sắp xếp ưu tiên Bảo Lộc - Bảo Lâm trước, sau đó mới tới Đà Lạt, Đức Trọng, Đắk Nông và Bình Thuận để dễ đọc và dễ triển khai thêm nội dung.</p>
+          <p>Danh sách được sắp xếp theo thứ tự ưu tiên Bảo Lộc - Bảo Lâm trước, sau đó là Đà Lạt, Đức Trọng, Đắk Nông và Bình Thuận.</p>
         </div>
 
         <ol class="tour-path">
@@ -823,12 +884,62 @@
       </div>
     </section>
 
+    <section id="baoloc-baolam" class="spot-section alt">
+      <div class="container">
+        <div class="section-title">
+          <span>Cụm Bảo Lộc - Bảo Lâm</span>
+          <h2>Điểm đến nổi bật nên ưu tiên viết bài</h2>
+          <p>Cụm này có nhiều thác, suối, đồi chè và farmstay phù hợp để phát triển thành một chuyên mục riêng của website.</p>
+        </div>
+
+        <div class="spot-grid">
+          <article class="spot-card"><img src="assets/images/thac-ylan.jpg" alt="Thác Ỷ Lan Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Thác Ỷ Lan</h3><p>Điểm mở tuyến đẹp, cảnh quan nước và rừng hợp ảnh dọc cung đường Đại Lào.</p></div></article>
+          <article class="spot-card"><img src="assets/images/suoi-thac-bao-khiem.jpg" alt="Suối thác Bảo Khiêm Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Suối thác Bảo Khiêm</h3><p>Phù hợp nội dung sinh thái, tắm suối nhẹ và dừng chân cuối tuần.</p></div></article>
+          <article class="spot-card"><img src="assets/images/thac-suoi-nguyen-anh.jpg" alt="Thác suối Nguyên Anh Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Thác suối Nguyên Anh</h3><p>Điểm mới để tăng chiều sâu cho cụm du lịch Bảo Lộc.</p></div></article>
+          <article class="spot-card"><img src="assets/images/thac-zenda.jpg" alt="Thác Zenda Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Thác Zenda</h3><p>Gợi ý tốt cho ảnh thiên nhiên và bài giới thiệu trải nghiệm ngoài trời.</p></div></article>
+          <article class="spot-card"><img src="assets/images/suoi-cat-dai-lao.jpg" alt="Suối cát Đại Lào Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Suối cát Đại Lào</h3><p>Điểm lạ, phù hợp khai thác thêm về Đại Lào và các khu ven đô.</p></div></article>
+          <article class="spot-card"><img src="assets/images/baoloc-sample.jpg" alt="Thác Đambri Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Thác Đambri</h3><p>Điểm biểu tượng của Bảo Lộc, giữ vai trò mốc cảnh quan quan trọng.</p></div></article>
+          <article class="spot-card"><img src="assets/images/da-lat-market.jpg" alt="Hồ Nam Phương Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Hồ Nam Phương</h3><p>Điểm dạo mát, chụp ảnh nhẹ và kết nối tốt với nội dung đô thị.</p></div></article>
+          <article class="spot-card"><img src="assets/images/da-lat-train-station.jpg" alt="Núi Đại Bình Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Núi Đại Bình</h3><p>Vị trí ngắm cảnh cao, phù hợp bài viết săn mây và trekking.</p></div></article>
+          <article class="spot-card"><img src="assets/images/baoloc-sample.jpg" alt="Đồi chè Tâm Châu Bảo Lộc" /><div class="body"><span class="zone">Bảo Lộc</span><h3>Đồi chè Tâm Châu</h3><p>Không gian rất dễ chụp ảnh, đúng đặc trưng Bảo Lộc - thủ phủ trà.</p></div></article>
+          <article class="spot-card"><img src="assets/images/thac-suoi-phuong-anh-ong-vien.jpg" alt="Thác suối Phương Anh - Ông Viên Bảo Lâm" /><div class="body"><span class="zone">Bảo Lâm</span><h3>Thác suối Phương Anh - Ông Viên</h3><p>Điểm sinh thái mới ở Bảo Lâm, phù hợp nội dung khám phá địa phương.</p></div></article>
+          <article class="spot-card"><img src="assets/images/farmstay-uti.jpg" alt="Farmstay UTI Bảo Lâm" /><div class="body"><span class="zone">Bảo Lâm</span><h3>Farmstay UTI</h3><p>Phù hợp du lịch nghỉ dưỡng, cắm trại và nội dung trải nghiệm farmstay.</p></div></article>
+          <article class="spot-card"><img src="assets/images/baoloc-sample.jpg" alt="Đồi chè Bảo Lâm" /><div class="body"><span class="zone">Bảo Lâm</span><h3>Đồi chè Bảo Lâm</h3><p>Có thể dùng làm điểm nối giữa các thác, suối và farmstay trong khu vực.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="daknong-binhthuan" class="spot-section">
+      <div class="container">
+        <div class="section-title">
+          <span>Đắk Nông - Bình Thuận</span>
+          <h2>Mở rộng sang hồ, thác, núi lửa và biển</h2>
+          <p>Đây là nhóm địa danh giúp website cân bằng giữa du lịch cao nguyên và du lịch biển, phù hợp để kéo dài hành trình.</p>
+        </div>
+
+        <div class="spot-grid">
+          <article class="spot-card"><img src="assets/images/bau-trang.jpg" alt="Tà Đùng Đắk Nông" /><div class="body"><span class="zone">Đắk Nông</span><h3>Tà Đùng</h3><p>Điểm nhấn hồ và đảo nổi, rất hợp làm ảnh đại diện cho tuyến Đắk Nông.</p></div></article>
+          <article class="spot-card"><img src="assets/images/datanla.jpg" alt="Thác Liêng Nung Đắk Nông" /><div class="body"><span class="zone">Đắk Nông</span><h3>Thác Liêng Nung</h3><p>Thêm một điểm thác tiêu biểu để làm dày nội dung du lịch sinh thái.</p></div></article>
+          <article class="spot-card"><img src="assets/images/baoloc-sample.jpg" alt="Hang động núi lửa Chư Bluk" /><div class="body"><span class="zone">Đắk Nông</span><h3>Hang động núi lửa Chư Bluk</h3><p>Điểm rất đặc trưng về địa chất, phù hợp bài khám phá chuyên sâu.</p></div></article>
+          <article class="spot-card"><img src="assets/images/pongour.jpg" alt="Thác Dray Sáp" /><div class="body"><span class="zone">Đắk Nông</span><h3>Thác Dray Sáp</h3><p>Mốc liên kết đẹp giữa tuyến hồ - thác - cao nguyên ở khu vực Tây Nguyên.</p></div></article>
+          <article class="spot-card"><img src="assets/images/pongour.jpg" alt="Thác Dray Nur" /><div class="body"><span class="zone">Đắk Nông</span><h3>Thác Dray Nur</h3><p>Phù hợp bổ sung vào bản đồ thác lớn của vùng.</p></div></article>
+          <article class="spot-card"><img src="assets/images/da-lat-market.jpg" alt="Hồ Ea Sno" /><div class="body"><span class="zone">Đắk Nông</span><h3>Hồ Ea Sno</h3><p>Điểm yên tĩnh, thuận lợi cho nội dung cắm trại và ngắm cảnh.</p></div></article>
+          <article class="spot-card"><img src="assets/images/bau-trang.jpg" alt="Mũi Né" /><div class="body"><span class="zone">Bình Thuận</span><h3>Mũi Né</h3><p>Biển, làng chài, cồn cát và resort là bộ ba không thể thiếu.</p></div></article>
+          <article class="spot-card"><img src="assets/images/bau-trang.jpg" alt="Bàu Trắng" /><div class="body"><span class="zone">Bình Thuận</span><h3>Bàu Trắng</h3><p>Địa danh cát trắng đặc trưng, thích hợp làm ảnh hero cho tuyến biển.</p></div></article>
+          <article class="spot-card"><img src="assets/images/bau-trang.jpg" alt="Hòn Rơm" /><div class="body"><span class="zone">Bình Thuận</span><h3>Hòn Rơm</h3><p>Điểm ngắm biển, nghỉ dưỡng và kết nối thuận tiện với Mũi Né.</p></div></article>
+          <article class="spot-card"><img src="assets/images/baoloc-sample.jpg" alt="Suối Tiên" /><div class="body"><span class="zone">Bình Thuận</span><h3>Suối Tiên</h3><p>Một trong những điểm dạo bộ, chụp ảnh và khám phá cảnh quan đặc trưng.</p></div></article>
+          <article class="spot-card"><img src="assets/images/baoloc-sample.jpg" alt="Tháp Po Sah Inư" /><div class="body"><span class="zone">Bình Thuận</span><h3>Tháp Po Sah Inư</h3><p>Di tích văn hóa quan trọng, giúp nội dung website cân bằng giữa thiên nhiên và lịch sử.</p></div></article>
+          <article class="spot-card"><img src="assets/images/baoloc-sample.jpg" alt="Cổ Thạch" /><div class="body"><span class="zone">Bình Thuận</span><h3>Cổ Thạch</h3><p>Điểm ven biển có màu sắc địa chất đặc biệt, hợp nội dung ảnh lạ.</p></div></article>
+        </div>
+      </div>
+    </section>
+
     <section id="noibat" class="highlight">
       <div class="container">
         <div class="section-title">
           <span>Điểm nổi tiếng & tự nhiên</span>
           <h2>Những nơi nên đưa vào website</h2>
-          <p>Có thể dùng danh sách này làm nội dung chính cho từng bài viết hoặc từng trang chi tiết sau này.</p>
+          <p>Bộ địa danh này giúp website có đủ điểm nhấn để viết bài giới thiệu, bài tuyến đường và các trang chi tiết sau này.</p>
         </div>
 
         <div class="places">
@@ -851,6 +962,120 @@
           <div class="place"><div class="icon">🏮</div><h4>Làng chài Mũi Né</h4><p>Nơi ngắm thuyền thúng, bình minh và thưởng thức hải sản.</p></div>
           <div class="place"><div class="icon">🗼</div><h4>Hải đăng Kê Gà</h4><p>Điểm ngắm biển, chụp ảnh và khám phá kiến trúc ven biển.</p></div>
           <div class="place"><div class="icon">🌅</div><h4>Đồi cát bay</h4><p>Địa điểm đặc trưng của Mũi Né, đẹp nhất vào sáng sớm hoặc chiều muộn.</p></div>
+          <div class="place"><div class="icon">🏞️</div><h4>Núi Đại Bình</h4><p>Điểm ngắm cảnh của Bảo Lộc, phù hợp săn mây và nhìn xuống thung lũng.</p></div>
+          <div class="place"><div class="icon">🌊</div><h4>Hồ Nam Phương</h4><p>Không gian thư giãn ở Bảo Lộc, dễ kết hợp dạo chơi và chụp ảnh.</p></div>
+          <div class="place"><div class="icon">🌋</div><h4>Thác Dray Nur</h4><p>Thác lớn nổi bật của Đắk Nông, giàu sức hút cho nội dung thiên nhiên.</p></div>
+          <div class="place"><div class="icon">🪨</div><h4>Cổ Thạch</h4><p>Khu vực ven biển có bãi đá đặc sắc, rất phù hợp để làm điểm nhấn ảnh.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trang-rieng">
+      <div class="container">
+        <div class="section-title">
+          <span>Trang vùng riêng</span>
+          <h2>Tách theo vùng để dễ duyệt và dễ phát triển nội dung</h2>
+          <p>Sáu trang này đi sâu hơn vào từng cụm địa phương, giúp website có cấu trúc rõ và chuyên nghiệp hơn.</p>
+        </div>
+
+        <div class="region-grid">
+          <article class="card">
+            <div class="card-img">🌸</div>
+            <div class="card-body">
+              <h3>Đà Lạt</h3>
+              <p>Trung tâm du lịch của toàn bộ hệ thống, thích hợp làm trang chủ lực cho hồ, núi và kiến trúc cổ.</p>
+              <div class="tags">
+                <span class="tag">Hồ Xuân Hương</span><span class="tag">Ga Đà Lạt</span><span class="tag">Langbiang</span>
+              </div>
+              <div style="margin-top:16px;">
+                <a class="btn btn-primary" href="dalat.html">Mở trang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">💦</div>
+            <div class="card-body">
+              <h3>Đức Trọng</h3>
+              <p>Cửa ngõ trung chuyển với Thác Pongour, hồ Đại Ninh và tuyến đi Đà Lạt.</p>
+              <div class="tags">
+                <span class="tag">Thác Pongour</span><span class="tag">Hồ Đại Ninh</span><span class="tag">Liên Khương</span>
+              </div>
+              <div style="margin-top:16px;">
+                <a class="btn btn-primary" href="duc-trong.html">Mở trang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🌲</div>
+            <div class="card-body">
+              <h3>Di Linh</h3>
+              <p>Cao nguyên xanh với đèo, thác, hồ và các đồi cà phê, rất hợp làm trang nghỉ chậm.</p>
+              <div class="tags">
+                <span class="tag">Đèo Gia Bắc</span><span class="tag">Thác Bobla</span><span class="tag">Hồ Đạ Mi</span>
+              </div>
+              <div style="margin-top:16px;">
+                <a class="btn btn-primary" href="di-linh.html">Mở trang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">☁️</div>
+            <div class="card-body">
+              <h3>Lâm Hà</h3>
+              <p>Vùng ven Đà Lạt với Thác Voi, Chùa Linh Ẩn, Mê Linh Coffee và nhiều tuyến săn mây đẹp.</p>
+              <div class="tags">
+                <span class="tag">Thác Voi</span><span class="tag">Chùa Linh Ẩn</span><span class="tag">Mê Linh Coffee</span>
+              </div>
+              <div style="margin-top:16px;">
+                <a class="btn btn-primary" href="lam-ha.html">Mở trang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🍃</div>
+            <div class="card-body">
+              <h3>Bảo Lộc - Bảo Lâm</h3>
+              <p>Cụm thác, suối, đồi chè và farmstay - phù hợp làm trang cửa ngõ cho toàn bộ tuyến cao nguyên phía nam.</p>
+              <div class="tags">
+                <span class="tag">Thác Đambri</span><span class="tag">Linh Quy Pháp Ấn</span><span class="tag">Farmstay UTI</span>
+              </div>
+              <div style="margin-top:16px;">
+                <a class="btn btn-primary" href="baoloc.html">Mở trang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🌋</div>
+            <div class="card-body">
+              <h3>Đắk Nông</h3>
+              <p>Hồ Tà Đùng, hang động núi lửa, thác nước và cảnh quan địa chất tạo nên một tuyến khám phá rất riêng.</p>
+              <div class="tags">
+                <span class="tag">Tà Đùng</span><span class="tag">Chư Bluk</span><span class="tag">Dray Nur</span>
+              </div>
+              <div style="margin-top:16px;">
+                <a class="btn btn-primary" href="daknong.html">Mở trang</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img">🏖️</div>
+            <div class="card-body">
+              <h3>Bình Thuận</h3>
+              <p>Mũi Né, Bàu Trắng, Hòn Rơm, Cổ Thạch và các điểm biển cho hành trình nắng gió, dễ kết hợp nghỉ dưỡng.</p>
+              <div class="tags">
+                <span class="tag">Mũi Né</span><span class="tag">Bàu Trắng</span><span class="tag">Cổ Thạch</span>
+              </div>
+              <div style="margin-top:16px;">
+                <a class="btn btn-primary" href="binhthuan.html">Mở trang</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -860,7 +1085,7 @@
         <div class="section-title">
           <span>Gợi ý hành trình</span>
           <h2>3 tuyến du lịch dễ triển khai</h2>
-          <p>Phù hợp để bạn viết thành các bài “lịch trình 2 ngày 1 đêm”, “3 ngày 2 đêm”, “5 ngày 4 đêm”.</p>
+          <p>Phù hợp để phát triển thành các bài 2 ngày 1 đêm, 3 ngày 2 đêm hoặc 5 ngày 4 đêm.</p>
         </div>
 
         <div class="route-grid">
@@ -899,8 +1124,8 @@
       <div class="container">
         <div class="section-title">
           <span>Kinh nghiệm</span>
-          <h2>Mẹo đi Lâm Đồng mở rộng</h2>
-          <p>Một vài lưu ý ngắn để khách dễ lên kế hoạch, đặc biệt khi kết hợp cao nguyên và biển.</p>
+          <h2>Kinh nghiệm đi Lâm Đồng mở rộng</h2>
+          <p>Một vài lưu ý ngắn để khách dễ lên kế hoạch, đặc biệt khi kết hợp cao nguyên, thác nước và biển.</p>
         </div>
 
         <div class="tips">
@@ -910,7 +1135,7 @@
           </div>
           <div class="tip-box">
             <h3>Di chuyển</h3>
-            <p>Nếu đi nhiều vùng, nên chia tuyến theo cụm: Đà Lạt - Đức Trọng - Lâm Hà; Bảo Lộc - Di Linh - Bảo Lâm; Đắk Nông - Tà Đùng; Phan Thiết - Mũi Né - Kê Gà.</p>
+            <p>Nếu đi nhiều vùng, nên chia tuyến theo cụm: Bảo Lộc - Bảo Lâm; Đà Lạt - Đức Trọng - Lâm Hà; Đắk Nông - Tà Đùng; Phan Thiết - Mũi Né - Kê Gà.</p>
           </div>
           <div class="tip-box">
             <h3>Chuẩn bị</h3>
@@ -930,7 +1155,7 @@
           <div class="section-title" style="margin-bottom:20px;">
             <span>Ẩm thực & trải nghiệm</span>
             <h2>Những điều nên thử khi đến Lâm Đồng mở rộng</h2>
-            <p>Không chỉ có cảnh đẹp, vùng đất này còn nổi tiếng với văn hóa bản địa, cà phê, trà, hải sản và nhiều trải nghiệm thiên nhiên hấp dẫn.</p>
+            <p>Không chỉ có cảnh đẹp, vùng đất này còn nổi tiếng với cà phê, trà, hải sản và các trải nghiệm thiên nhiên đặc trưng.</p>
           </div>
 
           <div class="places">
@@ -965,15 +1190,16 @@
         <p>
           Website chia sẻ thông tin du lịch, cảnh đẹp, địa điểm check-in,
           hành trình khám phá thiên nhiên, văn hóa và ẩm thực tại khu vực Lâm Đồng mở rộng,
-          bao gồm Đà Lạt, Bảo Lộc, Đức Trọng, Di Linh, Lâm Hà, Đắk Nông,
-          Phan Thiết và Bình Thuận cũ.
+          bao gồm Đà Lạt, Bảo Lộc, Bảo Lâm, Đức Trọng, Di Linh, Lâm Hà, Đắk Nông,
+          Phan Thiết và Bình Thuận.
         </p>
       </div>
 
       <div>
         <h3 style="color:#ffd166;">Khu vực nổi bật</h3>
-        <p>Đà Lạt</p>
         <p>Bảo Lộc</p>
+        <p>Bảo Lâm</p>
+        <p>Đà Lạt</p>
         <p>Đức Trọng</p>
         <p>Đắk Nông</p>
         <p>Phan Thiết - Mũi Né</p>
@@ -982,7 +1208,7 @@
       <div>
         <h3 style="color:#ffd166;">Liên hệ</h3>
         <p>📞 0986183806</p>
-        <p>🏢 viettrungnhattraveltradeco.ltd</p>
+        <p>🏢 Nội dung du lịch Lâm Đồng mở rộng</p>
         <p>🌐 dulichlamdong.github.io</p>
         <p>📍 Lâm Đồng - Việt Nam</p>
       </div>
