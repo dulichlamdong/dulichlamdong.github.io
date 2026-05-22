@@ -46,6 +46,8 @@
     .spot-card .zone { display:inline-flex; padding:5px 10px; border-radius:999px; background:#eefdf3; color:#105236; font-size:12px; font-weight:800; }
     .spot-card h3 { margin:12px 0 8px; color:#123524; font-size:20px; }
     .spot-card p { margin:0; color:var(--muted); font-size:14px; }
+    .spot-address { margin:10px 0 0; color:#4b5563; font-size:13px; }
+    .spot-map { width:100%; height:180px; border:0; margin-top:12px; border-radius:14px; }
     .tour-path { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; margin:0 0 28px; padding:0; list-style:none; }
     .tour-path li { background:white; border:1px solid #e7efe9; border-radius:16px; padding:14px 16px; box-shadow:0 6px 18px rgba(0,0,0,0.05); color:#274236; font-weight:700; }
     .tips { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
@@ -110,12 +112,12 @@
         </div>
 
         <div class="spot-grid">
-          <article class="spot-card"><img src="assets/images/binhthuan/mui-ne.jpg" alt="Mũi Né" /><div class="body"><span class="zone">Phan Thiết</span><h3>Mũi Né</h3><p>Trung tâm du lịch biển nổi tiếng với cát, resort, làng chài và các hoạt động thể thao biển.</p></div></article>
-          <article class="spot-card"><img src="assets/images/binhthuan/bau-trang.jpg" alt="Bàu Trắng" /><div class="body"><span class="zone">Bắc Bình</span><h3>Bàu Trắng</h3><p>Cồn cát trắng và hồ nước giữa sa mạc tạo nên một trong những cảnh quan nổi bật nhất.</p></div></article>
-          <article class="spot-card"><img src="assets/images/binhthuan/hon-rom.jpg" alt="Hòn Rơm" /><div class="body"><span class="zone">Mũi Né</span><h3>Hòn Rơm</h3><p>Điểm ngắm biển, nghỉ dưỡng và chụp ảnh rất thuận tiện khi đi tuyến Mũi Né.</p></div></article>
-          <article class="spot-card"><img src="assets/images/binhthuan/suoi-tien.jpg" alt="Suối Tiên" /><div class="body"><span class="zone">Mũi Né</span><h3>Suối Tiên</h3><p>Con suối nhỏ với sắc màu đất cát đặc trưng, phù hợp đi bộ và chụp ảnh trải nghiệm.</p></div></article>
-          <article class="spot-card"><img src="assets/images/binhthuan/po-sah-inu.jpg" alt="Tháp Po Sah Inư" /><div class="body"><span class="zone">Phan Thiết</span><h3>Tháp Po Sah Inư</h3><p>Di tích văn hóa Chăm quan trọng, giúp trang có thêm lớp nội dung lịch sử và văn hóa.</p></div></article>
-          <article class="spot-card"><img src="assets/images/binhthuan/co-thach.jpg" alt="Cổ Thạch" /><div class="body"><span class="zone">Tuy Phong</span><h3>Cổ Thạch</h3><p>Bãi đá ven biển đặc biệt, mang màu sắc địa chất rất khác biệt so với các khu vực khác.</p></div></article>
+          <article class="spot-card"><img src="assets/images/binhthuan/mui-ne.jpg" alt="Mũi Né" /><div class="body"><span class="zone">Phan Thiết</span><h3>Mũi Né</h3><p class="spot-address">Địa chỉ: Mũi Né, TP Phan Thiết, Bình Thuận.</p><iframe class="spot-map" loading="lazy" src="https://www.google.com/maps?q=Mui%20Ne,%20Phan%20Thiet,%20Binh%20Thuan&output=embed" title="Bản đồ Mũi Né"></iframe></div></article>
+          <article class="spot-card"><img src="assets/images/binhthuan/bau-trang.jpg" alt="Bàu Trắng" /><div class="body"><span class="zone">Bắc Bình</span><h3>Bàu Trắng</h3><p class="spot-address">Địa chỉ: Bàu Trắng, xã Hòa Thắng, huyện Bắc Bình, Bình Thuận.</p><iframe class="spot-map" loading="lazy" src="https://www.google.com/maps?q=Bau%20Trang,%20Hoa%20Thang,%20Bac%20Binh,%20Binh%20Thuan&output=embed" title="Bản đồ Bàu Trắng"></iframe></div></article>
+          <article class="spot-card"><img src="assets/images/binhthuan/hon-rom.jpg" alt="Hòn Rơm" /><div class="body"><span class="zone">Mũi Né</span><h3>Hòn Rơm</h3><p class="spot-address">Địa chỉ: Hòn Rơm, Mũi Né, TP Phan Thiết, Bình Thuận.</p><iframe class="spot-map" loading="lazy" src="https://www.google.com/maps?q=Hon%20Rom,%20Mui%20Ne,%20Phan%20Thiet,%20Binh%20Thuan&output=embed" title="Bản đồ Hòn Rơm"></iframe></div></article>
+          <article class="spot-card"><img src="assets/images/binhthuan/suoi-tien.jpg" alt="Suối Tiên" /><div class="body"><span class="zone">Mũi Né</span><h3>Suối Tiên</h3><p class="spot-address">Địa chỉ: Suối Tiên, Mũi Né, TP Phan Thiết, Bình Thuận.</p><iframe class="spot-map" loading="lazy" src="https://www.google.com/maps?q=Suoi%20Tien,%20Mui%20Ne,%20Phan%20Thiet,%20Binh%20Thuan&output=embed" title="Bản đồ Suối Tiên Mũi Né"></iframe></div></article>
+          <article class="spot-card"><img src="assets/images/binhthuan/po-sah-inu.jpg" alt="Tháp Po Sah Inư" /><div class="body"><span class="zone">Phan Thiết</span><h3>Tháp Po Sah Inư</h3><p class="spot-address">Địa chỉ: Tháp Po Sah Inư, phường Phú Hài, TP Phan Thiết, Bình Thuận.</p><iframe class="spot-map" loading="lazy" src="https://www.google.com/maps?q=Thap%20Po%20Sah%20Inu,%20Phan%20Thiet,%20Binh%20Thuan&output=embed" title="Bản đồ Tháp Po Sah Inư"></iframe></div></article>
+          <article class="spot-card"><img src="assets/images/binhthuan/co-thach.jpg" alt="Cổ Thạch" /><div class="body"><span class="zone">Tuy Phong</span><h3>Cổ Thạch</h3><p class="spot-address">Địa chỉ: Bãi đá Cổ Thạch, xã Bình Thạnh, huyện Tuy Phong, Bình Thuận.</p><iframe class="spot-map" loading="lazy" src="https://www.google.com/maps?q=Co%20Thach,%20Tuy%20Phong,%20Binh%20Thuan&output=embed" title="Bản đồ Cổ Thạch"></iframe></div></article>
         </div>
       </div>
     </section>
